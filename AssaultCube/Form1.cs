@@ -45,7 +45,7 @@ namespace AssaultCube
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*VAM = new VAMemory("ac_client");
+            /*VAM = new VAMemory("javaw");
             localPlayer = VAM.ReadInt32((IntPtr)PlayerBase);
 
             HealthAddr = localPlayer + Health_Offset;
@@ -73,8 +73,6 @@ namespace AssaultCube
                 }
 
             }*/
-            Process currentProcess = Process.GetCurrentProcess();
-            checkb_health.Text = currentProcess.ToString();
 
         }
 
@@ -101,6 +99,15 @@ namespace AssaultCube
         {
             checkb_ammo.Text = Ar_Ammo_Addr_STRING.ToString();
             Application.DoEvents();
+        }
+
+        private void get_process_button_Click(object sender, EventArgs e)
+        {
+            Process[] currentProcess = Process.GetProcesses();
+            foreach (Process process in currentProcess)
+            {
+                process_listbox.Items.Add(process.ProcessName);
+            }
         }
     }
 }

@@ -10,3 +10,14 @@ C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.csproj.CoreC
 C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.csproj.CopyComplete
 C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.exe
 C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.pdb
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.exe.config
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.exe
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.pdb
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.AssemblyReference.cache
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.Form1.resources
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.Properties.Resources.resources
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.GenerateResource.cache
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CoreCompileInputs.cache
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CopyComplete
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.exe
+C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.pdb
