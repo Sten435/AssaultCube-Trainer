@@ -1,0 +1,12 @@
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\bin\Debug\AssaultCube.exe.config
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\bin\Debug\AssaultCube.exe
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\bin\Debug\AssaultCube.pdb
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\bin\Debug\VAMemory.dll
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.csproj.AssemblyReference.cache
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.Form1.resources
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.Properties.Resources.resources
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.csproj.GenerateResource.cache
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.csproj.CoreCompileInputs.cache
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.csproj.CopyComplete
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.exe
+C:\Users\Stan\Desktop\AssaultCube\AssaultCube\obj\Debug\AssaultCube.pdb
