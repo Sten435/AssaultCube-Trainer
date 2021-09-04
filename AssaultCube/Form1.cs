@@ -12,6 +12,8 @@ namespace AssaultCube
 
         public static int localPlayer;
 
+        public static bool ac_client_Is_open = false;
+
         //public static int PlayerBase = 0x50F4F4;
         public static int PlayerBase = 0x50F4F4;
 
@@ -45,69 +47,109 @@ namespace AssaultCube
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*VAM = new VAMemory("javaw");
-            localPlayer = VAM.ReadInt32((IntPtr)PlayerBase);
+            if (backgroundWorker.IsBusy != true)
+            {
+                // Start the asynchronous operation.
+                backgroundWorker.RunWorkerAsync();
+            }
 
-            HealthAddr = localPlayer + Health_Offset;
-            Ar_Ammo_Addr = localPlayer + Assault_Ammo_Offset;*/
-        }
+            /*if (ac_client_Is_open)
+            {
+                VAM = new VAMemory("ac_client");
+                localPlayer = VAM.ReadInt32((IntPtr)PlayerBase);
 
-        private void Update(object sender, EventArgs e)
-        {
-            /*HealthAddr_STRING = VAM.ReadInt32((IntPtr)HealthAddr).ToString();
-            Ar_Ammo_Addr_STRING = VAM.ReadInt32((IntPtr)Ar_Ammo_Addr).ToString();
-
-            updateHealthLabel();
-            updateAmmoLabel();*/
+                HealthAddr = localPlayer + Health_Offset;
+                Ar_Ammo_Addr = localPlayer + Assault_Ammo_Offset;
+            }*/
         }
 
         private void checkb_ammo_CheckedChanged(object sender, EventArgs e)
         {
-            /*if (checkb_ammo.Checked)
+/*            while (checkb_ammo.Checked)
             {
-                while (true)
-                {
-                    VAM.WriteInt32((IntPtr)Ar_Ammo_Addr, 999);
-                    Thread.Sleep(1000);
-                    Application.DoEvents();
-                }
-
+                VAM.WriteInt32((IntPtr)Ar_Ammo_Addr, 9999);
+                Thread.Sleep(1);
+                Application.DoEvents();
             }*/
-
         }
 
         private void checkb_health_CheckedChanged(object sender, EventArgs e)
         {
-            /*if (checkb_health.Checked)
+/*            while (checkb_health.Checked)
             {
-                while (true)
-                {
-                    VAM.WriteInt32((IntPtr)HealthAddr, 1337);
-                    Thread.Sleep(500);
-                    Application.DoEvents();
-                }
+                VAM.WriteInt32((IntPtr)HealthAddr, 9999);
+                Thread.Sleep(1);
+                Application.DoEvents();
             }*/
         }
 
-        private void updateHealthLabel()
-        {
-            checkb_health.Text = HealthAddr_STRING.ToString();
-            Application.DoEvents();
-        }
+       /* private void get_process_button_Click(object sender, EventArgs e)
+        {*/
+/*            Process[] currentProcess = Process.GetProcesses();
+            foreach (Process process in currentProcess)
+            {
+                if(process.ProcessName == "ac_client")
+                {
+                    process_listbox.Items.Add("Correct");
+                    VAM = new VAMemory("ac_client");
 
-        private void updateAmmoLabel()
-        {
-            checkb_ammo.Text = Ar_Ammo_Addr_STRING.ToString();
-            Application.DoEvents();
-        }
+                    localPlayer = VAM.ReadInt32((IntPtr)PlayerBase);
 
-        private void get_process_button_Click(object sender, EventArgs e)
+                    HealthAddr = localPlayer + Health_Offset;
+                    Ar_Ammo_Addr = localPlayer + Assault_Ammo_Offset;
+
+                    ac_client_Is_open = true;
+
+                    checkb_ammo.Enabled = true;
+                    checkb_health.Enabled = true;
+                    process_listbox.Enabled = true;
+                }
+            }*/
+       /* }*/
+
+        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+
             Process[] currentProcess = Process.GetProcesses();
             foreach (Process process in currentProcess)
             {
-                process_listbox.Items.Add(process.ProcessName);
+                if (process.ProcessName == "ac_client")
+                {
+                    VAM = new VAMemory("ac_client");
+
+                    localPlayer = VAM.ReadInt32((IntPtr)PlayerBase);
+
+                    HealthAddr = localPlayer + Health_Offset;
+                    Ar_Ammo_Addr = localPlayer + Assault_Ammo_Offset;
+
+                    ac_client_Is_open = true;
+
+                }
             }
+
+            while (true)
+            {
+                if (ac_client_Is_open)
+                {
+                    if (checkb_ammo.Checked)
+                    {
+                        VAM.WriteInt32((IntPtr)Ar_Ammo_Addr, 9999);
+                        Thread.Sleep(100);
+                    }
+
+                    if (checkb_health.Checked)
+                    {
+                        VAM.WriteInt32((IntPtr)HealthAddr, 9999);
+                        Thread.Sleep(100);
+                    }
+                }
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

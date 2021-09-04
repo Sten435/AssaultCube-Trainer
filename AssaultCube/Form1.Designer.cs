@@ -29,12 +29,10 @@ namespace AssaultCube
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.checkb_ammo = new System.Windows.Forms.CheckBox();
             this.checkb_health = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.get_process_button = new System.Windows.Forms.Button();
-            this.process_listbox = new System.Windows.Forms.ListBox();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkb_ammo
@@ -59,36 +57,27 @@ namespace AssaultCube
             this.checkb_health.UseVisualStyleBackColor = true;
             this.checkb_health.CheckedChanged += new System.EventHandler(this.checkb_health_CheckedChanged);
             // 
-            // timer1
+            // backgroundWorker
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.Update);
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             // 
-            // get_process_button
+            // button1
             // 
-            this.get_process_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.get_process_button.ForeColor = System.Drawing.Color.DimGray;
-            this.get_process_button.Location = new System.Drawing.Point(149, 12);
-            this.get_process_button.Name = "get_process_button";
-            this.get_process_button.Size = new System.Drawing.Size(182, 34);
-            this.get_process_button.TabIndex = 3;
-            this.get_process_button.Text = "Get Processes";
-            this.get_process_button.UseVisualStyleBackColor = true;
-            this.get_process_button.Click += new System.EventHandler(this.get_process_button_Click);
-            // 
-            // process_listbox
-            // 
-            this.process_listbox.FormattingEnabled = true;
-            this.process_listbox.Location = new System.Drawing.Point(149, 54);
-            this.process_listbox.Name = "process_listbox";
-            this.process_listbox.Size = new System.Drawing.Size(182, 147);
-            this.process_listbox.TabIndex = 4;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(312, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(343, 211);
-            this.Controls.Add(this.process_listbox);
-            this.Controls.Add(this.get_process_button);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkb_health);
             this.Controls.Add(this.checkb_ammo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -105,9 +94,8 @@ namespace AssaultCube
 
         private System.Windows.Forms.CheckBox checkb_ammo;
         private System.Windows.Forms.CheckBox checkb_health;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button get_process_button;
-        private System.Windows.Forms.ListBox process_listbox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.Button button1;
     }
 }
 
