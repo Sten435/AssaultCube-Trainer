@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using System.Linq;
 using Memory;
 using System.Text;
-using System.Drawing;
 
 namespace AssaultCube
 {
@@ -27,35 +23,22 @@ namespace AssaultCube
             {
                 backgroundWorker.RunWorkerAsync();
             }
-
-            Thread thread = new Thread(new ThreadStart(WorkThreadFunction));
-            thread.Start();
         }
 
-        public void WorkThreadFunction()
-        {
-        while (true)
+        public void checkb_health_()
         {
             if (ac_client_Is_open)
             {
-                if (checkb_ammo.Checked)
-                {
-                    byte[] bytes = Encoding.ASCII.GetBytes("90");
-                    m.WriteBytes("ac_client.exe+637E9", bytes);
-                    Thread.Sleep(100);
-                }
-                else
-                {
-                    m.WriteMemory("ac_client.exe+637E9", "bytes", "FF 0E 57 8B 7C 24 14");
-                }
-
                 if (checkb_health.Checked)
                 {
                     m.FreezeValue($"{PointerAddr.HealthAddr}", "int", "999999");
                     Thread.Sleep(10);
                 }
+                else
+                {
+                    m.WriteMemory($"{PointerAddr.HealthAddr}", "int", "100");
+                }
             }
-        }
     }
 
         private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -87,6 +70,43 @@ namespace AssaultCube
                 }));
 
                 return;
+            }
+        }
+
+        private void checkb_health_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ac_client_Is_open)
+            {
+                if (checkb_ammo.Checked)
+                {
+                    m.FreezeValue($"{PointerAddr.ARiflePrimaryAmmoAddr}", "int", "999999");
+                    m.FreezeValue($"{PointerAddr.ARifleSecondaryAmmoAddr}", "int", "999999");
+                    m.FreezeValue($"{PointerAddr.PistolPrimaryAmmoAdr}", "int", "999999");
+                    m.FreezeValue($"{PointerAddr.PistolSecondaryAmmoAdr}", "int", "999999");
+                    Thread.Sleep(10);
+                }
+                else
+                {
+                    m.WriteMemory($"{PointerAddr.ARiflePrimaryAmmoAddr}", "int", "100");
+                    m.FreezeValue($"{PointerAddr.ARifleSecondaryAmmoAddr}", "int", "100");
+                    m.FreezeValue($"{PointerAddr.PistolPrimaryAmmoAdr}", "int", "100");
+                    m.FreezeValue($"{PointerAddr.PistolSecondaryAmmoAdr}", "int", "100");
+                }
+            }
+        }
+
+        private void checkb_ammo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ac_client_Is_open)
+            {
+                if (checkb_ammo.Checked)
+                {
+                    m.FreezeValue($"{PointerAddr.HealthAddr}", "int", "999999");
+                }
+                else
+                {
+                    m.WriteMemory($"{PointerAddr.HealthAddr}", "int", "100");
+                }
             }
         }
     }

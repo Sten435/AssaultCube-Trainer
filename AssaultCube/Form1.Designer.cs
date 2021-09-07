@@ -38,6 +38,7 @@ namespace AssaultCube
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkb_health = new System.Windows.Forms.CheckBox();
             this.Activate_button = new System.Windows.Forms.Button();
+            this.checkb_armor = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Inactive_radio_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Active_radio_btn)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -103,9 +104,11 @@ namespace AssaultCube
             this.checkb_ammo.TabIndex = 0;
             this.checkb_ammo.Text = "Ammo";
             this.checkb_ammo.UseVisualStyleBackColor = false;
+            this.checkb_ammo.CheckedChanged += new System.EventHandler(this.checkb_ammo_CheckedChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkb_armor);
             this.groupBox1.Controls.Add(this.checkb_health);
             this.groupBox1.Controls.Add(this.checkb_ammo);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
@@ -127,6 +130,7 @@ namespace AssaultCube
             this.checkb_health.TabIndex = 1;
             this.checkb_health.Text = "Health";
             this.checkb_health.UseVisualStyleBackColor = false;
+            this.checkb_health.CheckedChanged += new System.EventHandler(this.checkb_health_CheckedChanged);
             // 
             // Activate_button
             // 
@@ -137,6 +141,18 @@ namespace AssaultCube
             this.Activate_button.Text = "Activate";
             this.Activate_button.UseVisualStyleBackColor = true;
             this.Activate_button.Click += new System.EventHandler(this.Activate_button_Click);
+            // 
+            // checkb_armor
+            // 
+            this.checkb_armor.AutoSize = true;
+            this.checkb_armor.BackColor = System.Drawing.Color.Transparent;
+            this.checkb_armor.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkb_armor.Location = new System.Drawing.Point(22, 130);
+            this.checkb_armor.Name = "checkb_armor";
+            this.checkb_armor.Size = new System.Drawing.Size(95, 34);
+            this.checkb_armor.TabIndex = 2;
+            this.checkb_armor.Text = "Armor";
+            this.checkb_armor.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -172,6 +188,7 @@ namespace AssaultCube
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkb_health;
         private System.Windows.Forms.Button Activate_button;
+        private System.Windows.Forms.CheckBox checkb_armor;
     }
 }
 
