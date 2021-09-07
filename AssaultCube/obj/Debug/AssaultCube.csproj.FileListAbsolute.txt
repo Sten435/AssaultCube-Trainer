@@ -21,3 +21,32 @@ C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csp
 C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CopyComplete
 C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.exe
 C:\Users\stanp\Desktop\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.pdb
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.exe.config
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.exe
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.pdb
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\bin\Debug\VAMemory.dll
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.AssemblyReference.cache
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.Form1.resources
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.Properties.Resources.resources
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.GenerateResource.cache
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CoreCompileInputs.cache
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CopyComplete
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.exe
+C:\Users\Stan\Documents\C#\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.pdb
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.exe.config
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.exe
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\AssaultCube.pdb
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.AssemblyReference.cache
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.Form1.resources
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.Properties.Resources.resources
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.GenerateResource.cache
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CoreCompileInputs.cache
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.csproj.CopyComplete
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.exe
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\obj\Debug\AssaultCube.pdb
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\Memory.dll
+C:\Users\Stan\Documents\C# Projects\AssaultCube-Trainer\AssaultCube\bin\Debug\Memory.xml

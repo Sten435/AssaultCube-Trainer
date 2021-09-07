@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AssaultCube"
   ],
-  "SelectedNode": "\\AssaultCube.sln",
+  "SelectedNode": "\\AssaultCube\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
