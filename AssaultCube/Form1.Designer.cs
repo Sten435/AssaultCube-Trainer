@@ -276,6 +276,7 @@ namespace AssaultCube
             // updateCordinates
             // 
             this.updateCordinates.Enabled = true;
+            this.updateCordinates.Interval = 500;
             this.updateCordinates.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Enemy_1_X

@@ -6,12 +6,10 @@ namespace AssaultCube
         //public static int BASE_ADDR_1 = 0x109B74;
         //public static int BASE_ADDR_2 = 0x10F4F4;
         //public static int BASE_ADDR_3 = 0x11E20C;
-        private static string gameBase = "\"ac_client.exe\"";
-
 
         public static string viewMatrix = "0x501AE8";
-        public static string localEntityAddr = $"{gameBase}+10F4F4";
-        public static string norecoil = $"{gameBase}+0x45BAAD";
+        public static string localEntityAddr = "base+10F4F4";
+        public static string norecoil = "\"ac_client.exe\"+0x45BAAD";
 
         public static string HealthAddr = $"{localEntityAddr},F8";
         public static string IsShooting = $"{localEntityAddr},224"; // 0 is not  | 1 is shooting
@@ -34,9 +32,9 @@ namespace AssaultCube
 
 
 
-        private static int[] wichEnemy = { 4, 8, 12, 16, 20 };
+        private static int[] wichEnemy = { 4, 8, 0xC, 10, 14 };
 
-        public static string EnemyEntityAddr = $"{gameBase}+10F4F8";
+        public static string EnemyEntityAddr = "base+10F4F8";
 
         public static string Enemyname = $"{EnemyEntityAddr},{wichEnemy[0]},225";
 

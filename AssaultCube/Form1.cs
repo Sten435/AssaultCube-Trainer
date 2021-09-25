@@ -165,7 +165,20 @@ namespace AssaultCube
 
         private void checkb_esp_CheckedChanged(object sender, EventArgs e)
         {
-            // Make ESP
+
+            if (ac_client_Is_open)
+            {
+                if (checkb_rapidfire.Checked)
+                {
+                    byte[] nopBytes = { 0x90, 0x90, 0x90, 0x90, 0x90, 0x90 };
+                    m.WriteBytes($"base+0x5F5C6", nopBytes);
+                }
+                else
+                {
+                    byte[] nopBytes = { 0x89, 0x9D, 0x10, 0x02, 0x00, 0x00 };
+                    m.WriteBytes($"base+0x5F5C6", nopBytes);
+                }
+            }
         }
 
         private void checkb_aimbot_CheckedChanged(object sender, EventArgs e)
@@ -179,7 +192,8 @@ namespace AssaultCube
                 }
                 else
                 {
- 
+                    byte[] noRecoilBytes = { 0xD9, 0x5B, 0x44 };
+                    m.WriteBytes($"{PointerAddr.norecoil}", noRecoilBytes);
                 }
             }
            }
