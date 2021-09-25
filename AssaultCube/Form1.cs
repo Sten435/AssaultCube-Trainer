@@ -41,11 +41,6 @@ namespace AssaultCube
             }
     }
 
-        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -61,36 +56,38 @@ namespace AssaultCube
                 {
                     Inactive_radio_btn.Visible = false;
                 }));
-            }
-            else
-            {
-                Inactive_radio_btn.Invoke((MethodInvoker)(() =>
+
+                Active_radio_btn.Invoke((MethodInvoker)(() =>
                 {
-                    Inactive_radio_btn.Visible = true;
+                    Active_radio_btn.Visible = true;
                 }));
 
-                return;
+                Disconnect_button.Invoke((MethodInvoker)(() =>
+                {
+                    Disconnect_button.Visible = true;
+                }));
+
+                Activate_button.Invoke((MethodInvoker)(() =>
+                {
+                    Activate_button.Visible = false;
+                }));
             }
         }
+
+
 
         private void checkb_health_CheckedChanged(object sender, EventArgs e)
         {
             if (ac_client_Is_open)
             {
-                if (checkb_ammo.Checked)
+                if (checkb_health.Checked)
                 {
-                    m.FreezeValue($"{PointerAddr.ARiflePrimaryAmmoAddr}", "int", "999999");
-                    m.FreezeValue($"{PointerAddr.ARifleSecondaryAmmoAddr}", "int", "999999");
-                    m.FreezeValue($"{PointerAddr.PistolPrimaryAmmoAdr}", "int", "999999");
-                    m.FreezeValue($"{PointerAddr.PistolSecondaryAmmoAdr}", "int", "999999");
-                    Thread.Sleep(10);
+                    m.FreezeValue($"{PointerAddr.HealthAddr}", "int", "9999");
                 }
                 else
                 {
-                    m.WriteMemory($"{PointerAddr.ARiflePrimaryAmmoAddr}", "int", "100");
-                    m.FreezeValue($"{PointerAddr.ARifleSecondaryAmmoAddr}", "int", "100");
-                    m.FreezeValue($"{PointerAddr.PistolPrimaryAmmoAdr}", "int", "100");
-                    m.FreezeValue($"{PointerAddr.PistolSecondaryAmmoAdr}", "int", "100");
+                    m.UnfreezeValue($"{PointerAddr.HealthAddr}");
+                    m.WriteMemory($"{PointerAddr.HealthAddr}", "int", "100");
                 }
             }
         }
@@ -101,12 +98,106 @@ namespace AssaultCube
             {
                 if (checkb_ammo.Checked)
                 {
-                    m.FreezeValue($"{PointerAddr.HealthAddr}", "int", "999999");
+                    m.FreezeValue($"{PointerAddr.ARiflePrimaryAmmoAddr}", "int", "9999");
+                    m.FreezeValue($"{PointerAddr.ARifleSecondaryAmmoAddr}", "int", "9999");
+                    m.FreezeValue($"{PointerAddr.PistolPrimaryAmmoAdr}", "int", "9999");
+                    m.FreezeValue($"{PointerAddr.PistolSecondaryAmmoAdr}", "int", "9999");
                 }
                 else
                 {
-                    m.WriteMemory($"{PointerAddr.HealthAddr}", "int", "100");
+                    m.UnfreezeValue($"{PointerAddr.ARiflePrimaryAmmoAddr}");
+                    m.UnfreezeValue($"{PointerAddr.ARifleSecondaryAmmoAddr}");
+                    m.UnfreezeValue($"{PointerAddr.PistolPrimaryAmmoAdr}");
+                    m.UnfreezeValue($"{PointerAddr.PistolSecondaryAmmoAdr}");
+
+                    m.WriteMemory($"{PointerAddr.ARiflePrimaryAmmoAddr}", "int", "100");
+                    m.WriteMemory($"{PointerAddr.ARifleSecondaryAmmoAddr}", "int", "100");
+                    m.WriteMemory($"{PointerAddr.PistolPrimaryAmmoAdr}", "int", "100");
+                    m.WriteMemory($"{PointerAddr.PistolSecondaryAmmoAdr}", "int", "100");
                 }
+            }
+        }
+
+        private void checkb_armor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ac_client_Is_open)
+            {
+                if (checkb_armor.Checked)
+                {
+                    m.FreezeValue($"{PointerAddr.KevlarArmorAddr}", "int", "9999");
+                }
+                else
+                {
+                    m.UnfreezeValue($"{PointerAddr.KevlarArmorAddr}");
+                    m.WriteMemory($"{PointerAddr.KevlarArmorAddr}", "int", "100");
+                }
+            }
+        }
+
+        private void Disconnect_button_Click(object sender, EventArgs e)
+        {
+            ac_client_Is_open = false;
+
+            if (m.OpenProcess("ac_client"))
+            {
+                m.CloseProcess();
+                Inactive_radio_btn.Invoke((MethodInvoker)(() =>
+                {
+                    Inactive_radio_btn.Visible = true;
+                }));
+
+                Active_radio_btn.Invoke((MethodInvoker)(() =>
+                {
+                    Active_radio_btn.Visible = false;
+                }));
+
+                Disconnect_button.Invoke((MethodInvoker)(() =>
+                {
+                    Disconnect_button.Visible = false;
+                }));
+
+                Activate_button.Invoke((MethodInvoker)(() =>
+                {
+                    Activate_button.Visible = true;
+                }));
+            }
+        }
+
+        private void checkb_esp_CheckedChanged(object sender, EventArgs e)
+        {
+            // Make ESP
+        }
+
+        private void checkb_aimbot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ac_client_Is_open)
+            {
+                if (checkb_noReaload.Checked)
+                {
+                    byte[] noRecoilBytes = { 0xDD, 0xD8, 0x90 };
+                    m.WriteBytes($"{PointerAddr.norecoil}", noRecoilBytes);
+                }
+                else
+                {
+ 
+                }
+            }
+           }
+            
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (ac_client_Is_open)
+            {
+                x_value.Text = m.ReadFloat(PointerAddr.LocalPlayerXPosAddr).ToString();
+                y_value.Text = m.ReadFloat(PointerAddr.LocalPlayerYPosAddr).ToString();
+                z_value.Text = m.ReadFloat(PointerAddr.LocalPlayerZPosAddr).ToString();
+
+                Enemy_1_X.Text = m.ReadFloat(PointerAddr.EnemyXPosAddr).ToString();
+                Enemy_1_Y.Text = m.ReadFloat(PointerAddr.EnemyYPosAddr).ToString();
+                Enemy_1_Z.Text = m.ReadFloat(PointerAddr.EnemyZPosAddr).ToString();
+
+                Enemy_1_Name.Text = m.ReadString(PointerAddr.Enemyname).ToString();
             }
         }
     }
