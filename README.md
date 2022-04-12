@@ -1,2 +1,2 @@
 # AssaultCube Trainer (C#)
- AssaultCube (Offline) Cheat trainer
+ AssaultCube (Offline) Trainer - __Discontinued__
